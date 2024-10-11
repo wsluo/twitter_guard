@@ -1,6 +1,7 @@
 import os
 import sys
 import traceback
+import warnings
 
 import requests
 
@@ -1660,6 +1661,7 @@ class TwitterBot:
         Yields:
         Tweet: tweet fetched.
         """
+        warnings.warn("you can no longer get likes from accounts other than yourself", UserWarning, stacklevel=2)
         user_id = self.numerical_id(user_id)
 
         url = "https://twitter.com/i/api/graphql/eSSNbhECHHWWALkkQq-YTA/Likes"
